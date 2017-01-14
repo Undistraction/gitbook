@@ -12,6 +12,8 @@ Everything else is an object.
 
 ## Objects
 
+Objects are always passed around by reference.
+
 ### Keys
 
 Keys must be Strings. If they are not Strings, they will be transformed into Strings.

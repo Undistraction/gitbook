@@ -11,4 +11,8 @@
     * Objects
 * [Variables](variables.md)
     * Variables
+* [Prototype](prototype.md)
+    * [Prototype](prototype.md)
+* Reflection
+    * [Reflection](reflection.md)
 
