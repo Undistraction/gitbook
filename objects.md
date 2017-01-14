@@ -64,7 +64,7 @@ Keys for object literals must be wrapped in a string if they don't satisfy the s
 
 ## Access
 
-Accessing a key that doesn't exist will return  `undefined`. 
+Accessing a key that doesn't exist will return  `undefined`.
 
 To set a value if none already exists:
 
@@ -72,7 +72,7 @@ To set a value if none already exists:
 var alpha = beta[charlie] || 'delta';
 ```
 
-Attempting to access a value from `undefined `will result in a _Type Error_ exception. This can be guarded against using:
+Attempting to access a value from `undefined`will result in a _Type Error_ exception. This can be guarded against using:
 
 ```
 var alpha = beta[charlie] && beta[charlie].delta
