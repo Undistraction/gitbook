@@ -37,10 +37,8 @@ The function hasOwnProperty can be used to check if the property was defined on 
 
 ```
 var o = {};
-o.hasOwnProperty('toString');  // 'false'
+o.hasOwnProperty('toString');  // false
 ```
-
-
 
 
 
