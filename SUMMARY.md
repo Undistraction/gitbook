@@ -8,7 +8,7 @@
 * [Booleans](booleans.md)
     * Booleans
 * [Objects](objects.md)
-    * Objects
+    * [Objects](objects.md)
 * [Variables](variables.md)
     * Variables
 * [Prototype](prototype.md)

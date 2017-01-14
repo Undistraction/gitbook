@@ -81,5 +81,25 @@ var alpha = beta[charlie] && beta[charlie].delta
 alpha // undefined (but no exception is raised)
 ```
 
+### Enumeration
+
+An object can be enumerated over using `for in`. However there can be no guarantee of the order in which keys will be returned.
+
+### Removing properties
+
+Properties can be removed from an object using the operator `delete`. It will remove a property from the object but will leave the property untouched \(and therefore present on the object\) if it exists in the prototype chain. A property could be removed, only to reveal an identically named property on the prototype chain.
+
+```
+var o = {
+  alpha: 'abc'
+};
+
+o.alpha; // 'abc'
+
+delete o.alpha
+
+o.alpha; // undefined
+```
+
 
 
