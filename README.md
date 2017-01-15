@@ -42,5 +42,31 @@ o1.beta() // 'def'
 o2.charlie() // 'ghi'
 ```
 
+This leads to one of the biggest problems in JavaScript. When a function is called that is not a property of an object, it is bound to the global object, even if it is within a function with the context of an object.
 
+```
+var alpha = 'abc';
+
+function beta(func) {
+  
+  var charlie = function() {
+    return this.alpha;
+  }
+  
+  return charlie();
+}
+
+var o1 = {
+  alpha: 'def',
+  beta: beta
+}
+
+function delta() {
+  return this.alpha;
+}
+
+beta(charlie) // undefined
+```
+
+However, variables defined in a function are visible to anything within it \(assuming they are not shadowed by another variable\), so the value of `this` can be 
 
