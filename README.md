@@ -18,7 +18,32 @@ When a function is created, it retains a link to the context in which it is crea
 
 ## Methods
 
-When a function is stored as an attribute of an object it is known as a method. If it is invoked through the object, using dot notation, the `this` keyword 
+When a function is stored as an attribute of an object it is known as a method. If it is invoked through the object, using dot notation, the `this` keyword will point to the object. Due to JavaScript's use of _Late Binding, _this means that the this keyword can point to a different object _depending on how the function was called._
+
+```
+var alpha = 'abc';
+
+function beta() {
+    return this.alpha;
+}
+
+var o1 = {
+    alpha: 'def',
+    beta: beta
+}
+
+var o2 = {
+    alpha: 'ghi',
+    beta: beta
+}
+
+beta() // 'abc'
+o1.beta() // 'def'
+o2.charlie() // 'ghi'
+
+
+
+```
 
 
 
