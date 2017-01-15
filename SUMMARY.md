@@ -15,6 +15,6 @@
     * [Prototype](prototype.md)
 * Reflection
     * [Reflection](reflection.md)
-* Functions
+* [Functions](functions.md)
 * [Exceptions](exceptions.md)
 
