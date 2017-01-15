@@ -1,6 +1,6 @@
 # Exceptions
 
-Exceptions are created using `throw` and passing in an object containing a `name` and `message`. 
+Exceptions are created using `throw` and passing in an object containing a `name` and `message`.
 
 ```
 throw {
@@ -17,7 +17,6 @@ try {
 } catch (exception) {
     // Handle exception
 }
-
 ```
 
 
