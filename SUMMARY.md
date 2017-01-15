@@ -18,4 +18,5 @@
 * [Functions](functions.md)
 * [Exceptions](exceptions.md)
 * [Constructors](constructors.md)
+* [Apply](apply.md)
 
