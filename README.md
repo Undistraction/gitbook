@@ -67,13 +67,12 @@ beta(charlie) // 'abc'
 However, variables defined in a function are visible to anything within it \(assuming they are not shadowed by another variable\), so the value of `this` can be stored in a variable for use by nested functions:
 
 ```
-
 var alpha = 'abc';
 
 function beta(func) {
-  
+
   var that = this;
-  
+
   var charlie = function() {
     return that.alpha;
   }
