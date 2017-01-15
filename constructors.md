@@ -6,17 +6,17 @@ When a function is invoked using the `new` keyword, it becomes a _constructor fu
 var alpha = new Alpha();
 ```
 
-A constructor is a normal function with a capitalised name \(by convention\):
+It is customary to capitalise the name of a constructor function:
 
 ```
 var Alpha = function() {}
 ```
 
-As with any object, they can define their own properties:
+They can define their own properties:
 
 ```
 var Alpha = function() {
-    this.beta 'abc'
+    this.beta = 'abc';
 }
 ```
 
