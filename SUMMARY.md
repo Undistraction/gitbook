@@ -15,4 +15,5 @@
     * [Prototype](prototype.md)
 * Reflection
     * [Reflection](reflection.md)
+* Functions
 
