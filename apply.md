@@ -19,8 +19,8 @@ var o = {
   }
 }
 
-beta('Beta: '));
-o.charlie('Val:'));
+beta('Beta:') // Beta:abc
+o.charlie('Charlie:') // Charlie:def
 
 console.log(beta.apply(o, ['Nums:']));
 ```
