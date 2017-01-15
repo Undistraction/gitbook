@@ -16,4 +16,5 @@
 * Reflection
     * [Reflection](reflection.md)
 * Functions
+* [Exceptions](exceptions.md)
 
