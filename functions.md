@@ -88,11 +88,11 @@ var o1 = {
 beta(charlie) // 'def'
 ```
 
+## Invokation
+
+A function can also be invoked using apply
+
 ## Arguments
 
 When a function is involked, a further parameter is made available: `arguments`, which contains all the arguments passed to the function, even if there were more values passed than the function has arguments. Although arguments does have a length property, it isn't an Array and lacks all of the other functionality of an Array.
-
-
-
-
 
