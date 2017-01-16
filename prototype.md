@@ -58,9 +58,20 @@ var grandparent = {
 
 The`__proto__`attribute of a Function points to ???
 
-The`__proto__`attribute of an instance points to the constructor function that created it.
+The`__proto__`attribute of an instance points to the object stored in the `prototype` attribute of the constructor function that created it. 
 
 ## Function's prototype attribute
 
-Function's `prototype` attribute is freely accessible using `Function.prototype`, and stores the methods used by the constructor function when constructing instances. When an instance is created from a constructor function, the instance's `__proto__`object is set to the Constructor function's `prototype` attribute.
+A function has its own `prototype` attribute. Constructor functions therefore also have this attribute. However the objects that they construct do not, not being Functions.
+
+The `prototype` attribute stores an object. This object has the following attributes:
+
+1. `constructor` This is a reference back to the constructor function.
+2. `__proto__` This is a reference to the prototype object of the constructor function itself.
+
+3. Any other attributes
+
+## Relationship between `__proto__` and Functions' prototype attribute
+
+When a constructor function creates an instance, it sets the instance's `__proto__` attribute to its own prototype attribute.
 
