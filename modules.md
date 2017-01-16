@@ -32,11 +32,11 @@ Here is an example using a function so that the function has access to private a
 ```
 function createModule() {
     var alpha = 'abc';
-  
+
     var beta = function() {
         return alpha;
     }
-  
+
     return beta;
 }
 
