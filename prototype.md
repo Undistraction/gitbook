@@ -1,19 +1,40 @@
 # Prototype
 
-Every Object is linked to a Prototype object. The object can inherit properties through this object.
+Firstly and most importantly, there are two related properties that are both referred to as `prototype`,  throughout documentation and writing on the subject. They are in fact two distinct properties that are related but fundamentally different.
 
-When an attempt is made to retrieve a property that doesn't exist on an object, its prototype object is checked for this property. If it doesn't exist on this object and it too has a prototype object, then that object is also checked. This will continue until either the property is found, or there is no prototype object to check, in which case an exception is raised. This relationship is known as the prototype chain.
+1. The `__proto__` object which is hidden away, though can be accessed using `__proto__` in some browsers. This internal attribute points to the object's prototype object from which it receives methods.
+2. The prototype attribute of the Function object, freely accessible using Function.prototype, and storing the methods of the object.
 
-_An object's prototype object is not accessible._
+## \_\_proto\_\_
 
 ```
-var o = {};
-o.prototype // undefined
+var grandparent = {
+  alpha: 'abc'
+}
+
+var parent = {
+  beta: 'def'
+}
+
+var child = {
+  charlie: 'ghi'
+}
+
+parent.__proto__ = grandparent;
+child.__proto__ = parent;
+
+console.log(grandparent.alpha);
+console.log(grandparent.beta);
+console.log(grandparent.charlie);
+
+console.log(parent.alpha);
+console.log(parent.beta);
+console.log(parent.charlie);
+
+console.log(child.alpha);
+console.log(child.beta);
+console.log(child.charlie);
 ```
 
-The relationship between an object and its prototype is dynamic and ongoing. If properties are added to an object's prototype object, they are immediately available to it.
 
-This is true for all objects, including Functions, Arrays, Strings, Numbers, Regular Expressions and Booleans.
-
-Properties are added 
 
