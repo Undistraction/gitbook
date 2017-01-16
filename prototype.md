@@ -9,39 +9,39 @@ Firstly and most importantly, there are two related properties that are both ref
 
 which is hidden away, though can be accessed using `__proto__` in some browsers. This internal attribute points to the object's prototype object from which it receives methods.
 
-1. 
-```
+\`\`\`
+
 var grandparent = {
-  alpha: 'abc'
+
+alpha: 'abc'
+
 }
 
-var parent = {
-  beta: 'def'
+var parent = {  
+  beta: 'def'  
 }
 
-var child = {
-  charlie: 'ghi'
+var child = {  
+  charlie: 'ghi'  
 }
 
-parent.__proto__ = grandparent;
-child.__proto__ = parent;
+parent.**proto** = grandparent;  
+child.**proto** = parent;
 
-grandparent.alpha // 'abc'
-grandparent.beta // undefined
+grandparent.alpha // 'abc'  
+grandparent.beta // undefined  
 grandparent.charlie // undefined
 
-parent.alpha // 'abc'
-parent.beta // 'def'
+parent.alpha // 'abc'  
+parent.beta // 'def'  
 parent.charlie // undefined
 
-child.alpha // 'abc'
-child.beta // 'def'
-child.charlie // 'ghi
-```
+child.alpha // 'abc'  
+child.beta // 'def'  
+child.charlie // 'ghi  
+\`\`\`
 
 ## Function's prototype attribute
 
-Function's `prototype` attribute is freely accessible using `Function.prototype`, and stores the methods used by the constructor function when constructing instances. 
-
-
+Function's `prototype` attribute is freely accessible using `Function.prototype`, and stores the methods used by the constructor function when constructing instances.
 
