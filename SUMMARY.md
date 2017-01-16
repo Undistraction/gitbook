@@ -13,7 +13,7 @@
     * Variables
 * [Prototype](prototype.md)
     * [Prototype](prototype.md)
-* Reflection
+* [Reflection](reflection.md)
     * [Reflection](reflection.md)
 * [Functions](functions.md)
 * [Exceptions](exceptions.md)
@@ -23,4 +23,6 @@
 * [Closure](closure.md)
 * [Callbacks](callbacks.md)
 * [Modules](modules.md)
+
+## Core
 
