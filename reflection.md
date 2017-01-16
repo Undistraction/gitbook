@@ -1,5 +1,3 @@
-
-
 # Reflection
 
 The type of an object can be revealed using the _operator_ `typeof`:

@@ -2,11 +2,8 @@
 
 * [Introduction](README.md)
 * [NaN](nan.md)
-    * NaN
 * [Strings](strings.md)
-    * Strings
 * [Booleans](booleans.md)
-    * Booleans
 * [Objects](objects.md)
 * [Variables](variables.md)
 * [Prototype](prototype.md)
