@@ -9,24 +9,22 @@ Firstly and most importantly, there are two related properties that are both ref
 
 which is hidden away, though can be accessed using `__proto__` in some browsers. This internal attribute points to the object's prototype object from which it receives methods.
 
-\`\`\`
+```
 
 var grandparent = {
-
-alpha: 'abc'
-
+    alpha: 'abc'
 }
 
 var parent = {  
-  beta: 'def'  
+    beta: 'def'  
 }
 
 var child = {  
-  charlie: 'ghi'  
+    charlie: 'ghi'  
 }
 
-parent.**proto** = grandparent;  
-child.**proto** = parent;
+parent.__proto__ = grandparent;  
+child.__proto__ = parent;
 
 grandparent.alpha // 'abc'  
 grandparent.beta // undefined  
@@ -39,7 +37,7 @@ parent.charlie // undefined
 child.alpha // 'abc'  
 child.beta // 'def'  
 child.charlie // 'ghi  
-\`\`\`
+```
 
 ## Function's prototype attribute
 
