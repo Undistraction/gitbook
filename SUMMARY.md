@@ -21,4 +21,6 @@
 * [Apply](apply.md)
 * [Scope](scope.md)
 * [Closure](closure.md)
+* [Callbacks](callbacks.md)
+* [Modules](modules.md)
 
