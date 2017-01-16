@@ -23,11 +23,12 @@ alpha.isPrototypeOf(beta);
 
 which is hidden away, though can be accessed using `__proto__` in some browsers. This internal attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself.
 
-Note that you should never manipulate the `__proto__` _ _attribute in production code.
+Note that you should never manipulate the `__proto__` \_ \_attribute in production code.
 
-    var grandparent = {
-    alpha: 'abc'
-}
+```
+var grandparent = {
+        alpha: 'abc'
+    }
 
     var parent = {
         beta: 'def'
@@ -53,15 +54,13 @@ Note that you should never manipulate the `__proto__` _ _attribute in production
 
     Object.getPrototypeOf(child) // {beta: 'def'}
     Object.getPrototypeOf(parent) // {alpha: 'abc'}
-    ```
+```
 
 The`__proto__`attribute of a Function points to ???
 
 The`__proto__`attribute of an instance points to the constructor function that created it.
 
-## 
-
 ## Function's prototype attribute
 
-Function's `prototype` attribute is freely accessible using `Function.prototype`, and stores the methods used by the constructor function when constructing instances.
+Function's `prototype` attribute is freely accessible using `Function.prototype`, and stores the methods used by the constructor function when constructing instances. When an instance is created from a constructor function, the instance's `__proto__`object is set to the Constructor function's `prototype` attribute.
 
