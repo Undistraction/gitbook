@@ -23,17 +23,17 @@ var child = {
 parent.__proto__ = grandparent;
 child.__proto__ = parent;
 
-console.log(grandparent.alpha);
-console.log(grandparent.beta);
-console.log(grandparent.charlie);
+grandparent.alpha // 'abc'
+grandparent.beta // undefined
+grandparent.charlie // undefined
 
-console.log(parent.alpha);
-console.log(parent.beta);
-console.log(parent.charlie);
+parent.alpha // 'abc'
+parent.beta // 'def'
+parent.charlie // undefined
 
-console.log(child.alpha);
-console.log(child.beta);
-console.log(child.charlie);
+child.alpha // 'abc'
+child.beta // 'def'
+child.charlie // 'ghi
 ```
 
 
