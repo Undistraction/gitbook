@@ -5,6 +5,8 @@ As well as standard invocation and method invocation,  function can also be invo
 1. The value of `this` within the the invoked function to be supplied.
 2. Any  arguments to be supplied.
 
+It is easier to think of it as being called `applyTo`.
+
 _Note that the second argument must be an Array, even if it is a single value._
 
 ```

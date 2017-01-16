@@ -19,4 +19,6 @@
 * [Exceptions](exceptions.md)
 * [Constructors](constructors.md)
 * [Apply](apply.md)
+* [Scope](scope.md)
+* [Closure](closure.md)
 
