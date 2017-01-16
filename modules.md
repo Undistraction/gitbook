@@ -29,3 +29,21 @@ module.alpha // undefined
 
 Here is an example using a function so that the function has access to private attributes
 
+```
+function createModule() {
+    var alpha = 'abc';
+  
+    var beta = function() {
+        return alpha;
+    }
+  
+    return beta;
+}
+
+var beta = createModule();
+beta() // 'abc'
+beta.alpha // undefined
+```
+
+
+
