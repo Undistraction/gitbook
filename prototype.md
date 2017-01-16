@@ -75,7 +75,7 @@ The `prototype` attribute stores an object. This object has the following attrib
 1. `constructor` This is a reference back to the constructor function.
 2. `__proto__` This is just the generic  `__proto__` attribute that all objects possess - This is an object so it points to the Object constructor function's prototype attribute.
 
-1. Any other attributes
+3. Any other attributes
 
 ## Relationship between `__proto__` and Functions' prototype attribute
 

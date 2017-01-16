@@ -8,13 +8,9 @@
 * [Booleans](booleans.md)
     * Booleans
 * [Objects](objects.md)
-    * [Objects](objects.md)
 * [Variables](variables.md)
-    * Variables
 * [Prototype](prototype.md)
-    * [Prototype](prototype.md)
 * [Reflection](reflection.md)
-    * [Reflection](reflection.md)
 * [Functions](functions.md)
 * [Exceptions](exceptions.md)
 * [Constructors](constructors.md)
