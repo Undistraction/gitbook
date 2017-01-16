@@ -6,7 +6,7 @@ Douglas Crockford, JavaScript: The Good Parts P40
 
 A function can be used to establish a scope which will only be available to functions and properties that it defines.
 
-
+Here is an example using an object, so that the object has private attributes.
 
 ```
 function createModule() {
@@ -24,11 +24,8 @@ function createModule() {
 var module = createModule();
 
 module.getAlpha() // 'abc'
-
 module.alpha // undefined
 ```
 
-
-
-
+Here is an example using a function so that the function has access to private attributes
 
