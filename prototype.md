@@ -69,12 +69,17 @@ The`__proto__`attribute of an instance points to the object stored in the `proto
 The `__proto__` attribute of a prototype object points to the next prototype object in the chain.
 
 ```
-var alpha = function() {
-}
 
-var aInst = new a();
+var Alpha = function() {}
 
-console.log(a.__proto__.constructor.name);
+var alphaInstance = new Alpha();
+
+Alpha.__proto__.constructor.name // Function
+
+alphaInstance.__proto__ === Alpha.prototype // true
+
+alphaInstance.__proto__.__proto__ // prototype object of Object
+alphaInstance.__proto__.__proto__.constructor // Object
 ```
 
 ## Function's prototype attribute
