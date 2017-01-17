@@ -27,7 +27,7 @@ __proto__.constructor.name
 
 ## \_\_proto\_\_
 
-This internal attribute stores a _prototype object_. The object was given to it at construction time and is the same object referenced by the Constructor function's `prototype` attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself. There is nothing special about this object, and it is possible to swap out this object for another.
+This internal attribute stores a _prototype object_. The object was given to it at construction time and is the same object referenced by the Constructor function's `prototype` attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself. There is nothing special about this object, and it is possible to swap out this object for another. Any object can be used as a prototype object and its attributes will become available to the referencing object. It is irrelevant how the object was created, so a vanilla object is just as valid as the prototype object attached by a constructor function.
 
 Note that you should never manipulate the `__proto__` \_ \_attribute in production code.
 
