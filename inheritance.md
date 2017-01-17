@@ -40,13 +40,13 @@ Through the use of functions / closure, an object can be constructed with comple
 
 ```
 var alphaConstructor = function() {
-  
+
   var beta = 'abc';
-  
+
   var getBeta = function() {
     return beta;
   }
-  
+
   return {
     getBeta: getBeta
   }
@@ -55,22 +55,22 @@ var alphaConstructor = function() {
 var alphaObject = alphaConstructor();
 
 alphaObject.getBeta() // 'abc'
-alphaObject.beta // undefined 
+alphaObject.beta // undefined
 ```
 
 This can be taken further by storing private attributes on an object that is passed into the constructor or created. That way, one constructor can pass a secret object in to another constructor. In this way, private attributes can be shared between chained constructors.
 
 ```
 var alphaConstructor = function(privateObject) {
-  
+
   privateObject = privateObject || {};
-  
+
   privateObject.beta = privateObject.beta || 'abc';
-  
+
   var getBeta = function() {
     return privateObject.beta;
   }
-  
+
   return {
     getBeta: getBeta
   }
@@ -79,22 +79,22 @@ var alphaConstructor = function(privateObject) {
 var alphaObject = alphaConstructor();
 
 var charlieConstructor = function(privateObject) {
-  
+
   privateObject = privateObject || {};
-  
+
   privateObject.beta = 'def';
   privateObject.delta = 'ghi';
-  
+
   var getDelta = function() {
     return privateObject.delta;
   }
-  
+
   var o = alphaConstructor(privateObject);
-  
+
   o.getDelta = getDelta;
-  
+
   return o;
-  
+
 }
 
 var charlieObject = charlieConstructor();
@@ -103,6 +103,10 @@ console.log(alphaObject.getBeta()) // 'abc'
 console.log(charlieObject.getBeta()) // 'def'
 console.log(charlieObject.getDelta()) // 'ghi'
 ```
+
+## Mixins
+
+It is also easy to add methods to an object using a function. This can be used on prototype objects to bestow functionality on all objects with that object exists in their prototype chain.
 
 
 
