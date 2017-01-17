@@ -68,6 +68,15 @@ The`__proto__`attribute of an instance points to the object stored in the `proto
 
 The `__proto__` attribute of a prototype object points to the next prototype object in the chain.
 
+```
+var alpha = function() {
+}
+
+var aInst = new a();
+
+console.log(a.__proto__.constructor.name);
+```
+
 ## Function's prototype attribute
 
 A function has its own `prototype` attribute. Constructor functions therefore also have this attribute. However the objects that they construct do not, not being Functions.
@@ -88,8 +97,4 @@ When a constructor function creates an instance, it sets the instance's `__proto
 ## Delegation
 
 When the compiler looks up an attribute on an object instance, it first looks at the object itself, then at the object stored in its `__proto__` attribute. If it still hasn't found the attribute it will look at the `__proto__` attribute of this object and so on until the attribute is discovered or the value of `__proto__` is `undefined`.
-
-
-
-
 
