@@ -19,6 +19,7 @@
 * [Modules](modules.md)
 * [Inheritance](inheritance.md)
 * [Object.create](objectcreate.md)
+* API
 
 ## Core
 
