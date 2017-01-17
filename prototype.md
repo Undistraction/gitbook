@@ -27,7 +27,7 @@ __proto__.constructor.name
 
 ## \_\_proto\_\_
 
-This internal attribute stores a _prototype object_. The object was given to it at construction time and is the same object referenced by the Constructor function's `prototype` attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself.
+This internal attribute stores a _prototype object_. The object was given to it at construction time and is the same object referenced by the Constructor function's `prototype` attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself. There is nothing special about this object, and it is possible to swap out this object for another.
 
 Note that you should never manipulate the `__proto__` \_ \_attribute in production code.
 
@@ -69,7 +69,6 @@ The`__proto__`attribute of an instance points to the object stored in the `proto
 The `__proto__` attribute of a prototype object points to the next prototype object in the chain.
 
 ```
-
 var Alpha = function() {}
 
 var alphaInstance = new Alpha();
