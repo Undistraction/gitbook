@@ -18,6 +18,7 @@
 * [Callbacks](callbacks.md)
 * [Modules](modules.md)
 * [Inheritance](inheritance.md)
+* [Object.create](objectcreate.md)
 
 ## Core
 
