@@ -106,7 +106,5 @@ console.log(charlieObject.getDelta()) // 'ghi'
 
 ## Mixins
 
-It is also easy to add methods to an object using a function. This can be used on prototype objects to bestow functionality on all objects with that object exists in their prototype chain.
-
-
+It is also easy to add methods to an object using a function. This can be used on prototype objects to bestow functionality on all objects with that object exists in their prototype chain. This allows an object to receive methods from multiple functions, mixing functionality into the object. 
 
