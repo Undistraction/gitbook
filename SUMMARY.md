@@ -17,6 +17,7 @@
 * [Closure](closure.md)
 * [Callbacks](callbacks.md)
 * [Modules](modules.md)
+* [Inheritance](inheritance.md)
 
 ## Core
 
