@@ -8,6 +8,23 @@ Takes two arguments:
 2. Properties to add to the object
 
 ```
+var alphaObject = {
+  beta: 'abc'
+}
+
+var createdInstance = Object.create(alphaObject, {charlie: {value: 'def'}});
+
+createdInstance.echo = function() {
+  return this.beta + this.charlie;
+}
+
+createdInstance.echo() // 'abcdef'
+createdInstance.__proto__ === alphaObject // true
+```
+
+Example using an object instance from a custom constructor function
+
+```
 var Alpha = function(name) {
   this.beta = 'abc';
 }
