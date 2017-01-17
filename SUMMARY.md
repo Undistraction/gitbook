@@ -7,7 +7,7 @@
 * [Booleans](booleans.md)
 * [Objects](objects.md)
 * [Variables](variables.md)
-* [Prototype](prototype.md)
+* [Prototype Chain](prototype.md)
 * [Reflection](reflection.md)
 * [Functions](functions.md)
 * [Exceptions](exceptions.md)

@@ -1,4 +1,4 @@
-# Prototype
+# Prototype Chain
 
 Firstly and most importantly, there are two related properties that are both referred to as `prototype`,  throughout documentation and writing on the subject. They are in fact two distinct properties that are related but fundamentally different.
 
@@ -27,7 +27,7 @@ __proto__.constructor.name
 
 ## \_\_proto\_\_
 
-This internal attribute stores a prototype object. The object was given to it at construction time and is the same object referenced by the Constructor function's `prototype` attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself.
+This internal attribute stores a _prototype object_. The object was given to it at construction time and is the same object referenced by the Constructor function's `prototype` attribute _delegates_ to the object's prototype object for any methods that aren't on the object itself.
 
 Note that you should never manipulate the `__proto__` \_ \_attribute in production code.
 
@@ -62,9 +62,11 @@ var grandparent = {
     Object.getPrototypeOf(parent) // {alpha: 'abc'}
 ```
 
-The`__proto__`attribute of a Function points to ???
+The `__proto__` attribute of a constructor function points to the prototype object stored in the prototype attribute of the Function constructor.
 
 The`__proto__`attribute of an instance points to the object stored in the `prototype` attribute of the constructor function that created it.
+
+The `__proto__` attribute of a prototype object points to the next prototype object in the chain.
 
 ## Function's prototype attribute
 
@@ -85,7 +87,9 @@ When a constructor function creates an instance, it sets the instance's `__proto
 
 ## Delegation
 
-When the compiler looks up an attribute on an object instance, it first looks at the object itself, then at the object stored in its `__proto__` attribute. If it still hasn't found the attribute it will look at the `__proto__` attribute of the constructor function and so on until the attribute is discovered or the value of `__proto__` is `undefined`.
+When the compiler looks up an attribute on an object instance, it first looks at the object itself, then at the object stored in its `__proto__` attribute. If it still hasn't found the attribute it will look at the `__proto__` attribute of this object and so on until the attribute is discovered or the value of `__proto__` is `undefined`.
+
+
 
 
 
