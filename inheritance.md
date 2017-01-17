@@ -19,5 +19,20 @@ By setting a constructor's prototype attribute to the instance of an object,  th
 
 Customisation of a new object by specifying the differences from the object on which it is based.
 
+Note: Object.create sets the new object's 
+
+```
+var Alpha = function(name) {
+    this.beta = 'abc';
+}
+var alphaInstance = new Alpha('Hello');
+
+var createdInstance = Object.create(alphaInstance, {charlie: {value: 'def'}});
+
+createdInstance.beta // abc
+createdInstance.charlie // def
+createdInstance.__proto__ === alphaInstance //true
+```
+
 
 
