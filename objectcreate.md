@@ -1,5 +1,7 @@
 # Object.create
 
+Creates a new object with  \_\_proto\_\_ object set to
+
 Takes two arguments:
 
 1. The object to use as the prototype object
@@ -11,10 +13,11 @@ var Alpha = function(name) {
 }
 var alphaInstance = new Alpha('Hello');
 
-var b = Object.create(alphaInstance, {charlie: {value: 'def'}});
+var createdInstance = Object.create(alphaInstance, {charlie: {value: 'def'}});
 
-b.beta // 'abc'
-b.charlie // 'def'
+createdInstance.beta // abc
+createdInstance.charlie // def
+createdInstance.__proto__ === alphaInstance //true
 ```
 
 
