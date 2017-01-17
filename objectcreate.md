@@ -1,6 +1,6 @@
 # Object.create
 
-Creates a new object with  \_\_proto\_\_ object set to
+Creates a new object with  \_\_proto\_\_ object set to the supplied object
 
 Takes two arguments:
 
