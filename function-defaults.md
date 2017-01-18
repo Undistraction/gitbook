@@ -28,13 +28,11 @@ After
 
 ```
 function test(name="", {alpha, beta, charlie} = {}) {
-  console.log(name); // prints value of alpha
+  return name+' '+alpha +' '+beta;
 }
 
-test('test', {beta:'test'}); 
+test('test', {beta:'test'});
 ```
-
-
 
 Default values can also be supplied to the keys of the params object
 
