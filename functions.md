@@ -38,7 +38,7 @@ They can be immediately invoked.
 (function(){}())
 ```
 
-_Note that the p_arentheses_ around the function expression make it into an expression. without them it would be free-standing and therefore need a name, making it a function declaration._
+_Note that the p\_arentheses_ around the function expression make it into an expression. without them it would be free-standing and therefore need a name, making it a function declaration.\_
 
 When a function expression is immediately invoked it is known as an _IIFE_ \(immediately invoked function expression\) or an _immediate function._
 
@@ -65,10 +65,11 @@ Parentheses must be used if there are no params or more than one:
 (alpha, beta) => expression
 ```
 
-If the body of the function is complex, a function body can be used, however in this case, an explicit return statement must be used:
+If the body of the function is complex, a function body can be used, however in this case, an explicit return statement must be used to return a value:
 
 ```
 param => {
+    return expression;
 }
 ```
 
