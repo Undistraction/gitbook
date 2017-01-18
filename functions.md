@@ -7,7 +7,7 @@ A function has a `prototype` property. This property is not related to the proto
 A function has three additional _hidden_ properties:
 
 1. The `context` of the function
-2. The code that implements its behaviour
+2. The code that implements its behaviour~code
 3. `prototype` which stores its prototype object \(only relevant to constructor functions\).
 
 A function can be invoked.
@@ -31,10 +31,45 @@ function() {}
 var alpha = function() {}
 ```
 
-They can be immediately invoked
+They can be immediately invoked.
 
 ```
-function(){}()
+(function(){})()
+(function(){}())
+```
+
+_Note that the p_arentheses_ around the function expression make it into an expression. without them it would be free-standing and therefore need a name, making it a function declaration._
+
+When a function expression is immediately invoked it is known as an _IIFE_ \(immediately invoked function expression\) or an _immediate function._
+
+### ES6 Arrow functions
+
+ES6 introduces a simpler way to write a functional expression using the _fat arrow_ operator. If it is written without a function body, the expression on the right of the arrow is returned.
+
+```
+param => expression
+```
+
+This is equivalent to:
+
+```
+function(param) {
+    return expression
+}
+```
+
+Parentheses must be used if there are no params or more than one:
+
+```
+() => expression
+(alpha, beta) => expression
+```
+
+If the body of the function is complex, a function body can be used, however in this case, an explicit return statement must be used:
+
+```
+param => {
+}
 ```
 
 ## Closures
