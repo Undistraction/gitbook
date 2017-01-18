@@ -16,7 +16,7 @@
 * [Scope](scope.md)
 * [Closure](closure.md)
 * [Callbacks](callbacks.md)
-* [Modules](modules.md)
+* [Creating Modules](modules.md)
 * [Inheritance](inheritance.md)
 * [Object.create](objectcreate.md)
 * [API](api.md)
@@ -31,4 +31,6 @@
 * [Generators](generators.md)
 * [Iterators](iterators.md)
 * [Let](let.md)
+* [Maps](maps.md)
+* [Modules](modules.md)
 
