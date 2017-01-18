@@ -29,4 +29,6 @@
 * [Const](const.md)
 * [Function Defaults](function-defaults.md)
 * [Generators](generators.md)
+* [Iterators](iterators.md)
+* [Let](let.md)
 
