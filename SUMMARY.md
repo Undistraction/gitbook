@@ -24,4 +24,5 @@
 ## ES6
 * Array Destructuring
 * [Arrays](arrays.md)
+* [Bind](bind.md)
 
