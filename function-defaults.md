@@ -14,11 +14,9 @@ function test(alpha='a', beta='b', charlie=alpha+beta) {
 }()
 ```
 
-## 
-
 ## Objects
 
-When using objects as arguments, it is possible to provide the names of the expected keys, making the function signature much more readable. This also results in the keys being made available within the function as variables
+When using objects as arguments, expected keys and values can be provide. Object values are available within the function body through variables named after the keys. Any keys of the params object not supplied will be undefined
 
 Before
 
@@ -30,16 +28,13 @@ After
 
 ```
 function test(name="", {alpha, beta, charlie} = {}) {
-  console.log(alpha); // prints value of alpha
+  console.log(name); // prints value of alpha
 }
+
+test('test', {beta:'test'}); 
 ```
 
-Any keys of the params object not supplied will be  
-undefined
 
-```
-test('test', {beta:'test'});
-```
 
 Default values can also be supplied to the keys of the params object
 
