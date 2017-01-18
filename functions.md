@@ -16,7 +16,7 @@ There are important differences between a _function declaration_ and a _function
 
 ### Function Declaration
 
-A function declaration is a free-standing named function. 
+A function declaration is a free-standing named function.
 
 ```
 function alpha() {}
@@ -24,7 +24,7 @@ function alpha() {}
 
 ### Function Expression
 
-A function expression is an anonymous function created with a literal that can be used where an expression is permissible. They are always either part of another statement or as an argument. 
+A function expression is an anonymous function created with a literal that can be used where an expression is permissible. They are always either part of another statement, an argument or a return value.
 
 ```
 function() {}
