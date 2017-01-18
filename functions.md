@@ -4,13 +4,38 @@ A function is an object, linked to `Function.prototype,` which is itself linked 
 
 A function has a `prototype` property. This property is not related to the prototype chain as it is on the object itself, not the `Function`object.
 
-A function has two additional _hidden_ properties:
+A function has three additional _hidden_ properties:
 
 1. The `context` of the function
 2. The code that implements its behaviour
-3. `prototype`
+3. `prototype` which stores its prototype object \(only relevant to constructor functions\).
 
 A function can be invoked.
+
+There are important differences between a _function declaration_ and a _function expression. _
+
+### Function Declaration
+
+A function declaration is a free-standing named function. 
+
+```
+function alpha() {}
+```
+
+### Function Expression
+
+A function expression is an anonymous function created with a literal that can be used where an expression is permissible. They are always either part of another statement or as an argument. 
+
+```
+function() {}
+var alpha = function() {}
+```
+
+They can be immediately invoked
+
+```
+function(){}()
+```
 
 ## Closures
 
