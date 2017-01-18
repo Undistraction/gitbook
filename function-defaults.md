@@ -4,15 +4,14 @@ Functions now support default parameters:
 
 ```
 function test(value=[]) {
-
 ```
 
 Parameters have access to previous parameters:
 
 ```
-function test(alpha='a', beta='b', charlie='a+b') {
-    console.log(charlie);
-}
+function test(alpha='a', beta='b', charlie=alpha+beta) {
+  charlie // 'ab'
+}()
 ```
 
 ## 
