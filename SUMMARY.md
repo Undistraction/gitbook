@@ -1,6 +1,6 @@
 # Summary
 
-## Main
+## ES
 * [Introduction](README.md)
 * [NaN](nan.md)
 * [Strings](strings.md)
@@ -19,7 +19,9 @@
 * [Modules](modules.md)
 * [Inheritance](inheritance.md)
 * [Object.create](objectcreate.md)
-* API
+* [API](api.md)
 
-## Core
+## ES6
+* Array Destructuring
+* [Arrays](arrays.md)
 
