@@ -1,4 +1,4 @@
-# ES 2016 - Function Defaults
+# Default Parameters
 
 Functions now support default parameters:
 
@@ -8,7 +8,9 @@ function test(value=[]) {
 }
 ```
 
-When using objects as arguments, it is now possible to name the keys, making
+## Objects
+
+When using objects as arguments, it is now possible to provide the names of the expected keys, making
 the function signature much more readable. This also results in the keys being
 made available within the function as variables
 

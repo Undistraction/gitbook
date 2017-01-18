@@ -22,15 +22,21 @@
 * [API](api.md)
 
 ## ES6
-* Array Destructuring
+* [Array Destructuring](array-destructuring.md)
 * [Arrays](arrays.md)
 * [Bind](bind.md)
 * [Classes](classes.md)
 * [Const](const.md)
-* [Function Defaults](function-defaults.md)
+* [Default Parameters](function-defaults.md)
 * [Generators](generators.md)
 * [Iterators](iterators.md)
 * [Let](let.md)
 * [Maps](maps.md)
 * [Module](module.md)
+* [Object Assign](object-assign.md)
+* [Object Initialising and Destructuring](object-initialising-and-destructuring.md)
+* [Promises](promises.md)
+* [Sets](sets.md)
+* [Template Strings](template-strings.md)
+* [Variadic Functions](variadic-functions.md)
 
