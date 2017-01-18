@@ -25,4 +25,8 @@
 * Array Destructuring
 * [Arrays](arrays.md)
 * [Bind](bind.md)
+* [Classes](classes.md)
+* [Const](const.md)
+* [Function Defaults](function-defaults.md)
+* [Generators](generators.md)
 
