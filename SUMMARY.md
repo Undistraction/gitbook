@@ -32,5 +32,5 @@
 * [Iterators](iterators.md)
 * [Let](let.md)
 * [Maps](maps.md)
-* [Modules](modules.md)
+* [Module](module.md)
 
