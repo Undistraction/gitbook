@@ -20,6 +20,7 @@
 * [Inheritance](inheritance.md)
 * [Object.create](objectcreate.md)
 * [API](api.md)
+* [Strict Mode](strict-mode.md)
 
 ## ES6
 * [Array Destructuring](array-destructuring.md)
