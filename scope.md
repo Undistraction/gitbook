@@ -103,5 +103,24 @@ var element = document.getElementById('button');
 element.addEventListener('click', button.click);
 ```
 
-This means that arrow functions used in object literals will have a context of the object itself, but of the current context in which the object is declared. 
+This means that arrow functions used in object literals will have a context of the object itself, but of the current context in which the object is declared.
+
+## Bind
+
+Bind creates a new function with the same body as the function on which it's called, but with its context set to the object passed in to it. This function can then be passed around and called from any context while retaining its own context.
+
+```
+function Button() {
+  this.click = function() {
+    console.log(this); // <button id='button'> NOT the instance of Button
+  }
+}
+
+var button = new Button();
+
+var element = document.getElementById('button');
+element.addEventListener('click', button.click.bind(button);
+```
+
+
 
