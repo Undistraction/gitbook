@@ -38,7 +38,7 @@ They can be immediately invoked.
 (function(){}())
 ```
 
-_Note that the p\_arentheses_ around the function expression make it into an expression. without them it would be free-standing and therefore need a name, making it a function declaration.\_
+_Note that the parentheses_ around the function expression make it into an expression. without them it would be free-standing and therefore need a name, making it a function declaration.\_
 
 When a function expression is immediately invoked it is known as an _IIFE_ \(immediately invoked function expression\) or an _immediate function._
 
@@ -72,6 +72,20 @@ param => {
     return expression;
 }
 ```
+
+## Self-referencing
+
+A function has no reference to itself, so if it want to reference itself it must access a variable storing itself, for example:
+
+```
+function alpha() {
+  console.log(alpha);
+}
+
+alpha() // Object
+```
+
+## 
 
 ## Closures
 
