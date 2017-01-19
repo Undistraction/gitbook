@@ -63,11 +63,9 @@ charlie.apply(beta, ['2']); // 2b
 
 ### Thinking Functionally
 
-In imperative programming we would pass an array to a method which would handle iteration using a for loop, however a functional approach means creating a function that operates on one of the elements at a time. What happens to each item is encapsulated in a function and therefore easily changed.  
+In imperative programming we would pass an array to a method which would handle iteration using a for loop, however a functional approach means creating a function that operates on one of the elements at a time. What happens to each item is encapsulated in a function and therefore easily changed.
 
 ```
-
-
 function forEach(list, callback) {
   for (var n= 0; n < list.length; n++) {
     callback.call(list[n], n);
@@ -89,7 +87,7 @@ forEach(values, callback);
 
 ## Arrow Functions
 
-An arrow function isn't supplied with a `this` when it is invoked, but remembers the `this` at the time they were constructed. This means methods defined in a constructor function using an arrow function will always have the context of the constructed instance, even if the method is passed into another function as a callback it will never lose its context. 
+An arrow function isn't supplied with a `this` when it is invoked, but remembers the `this` at the time they were constructed. This means methods defined in a constructor function using an arrow function will always have the context of the constructed instance, even if the method is passed into another function as a callback it will never lose its context.
 
 ```
 function Button() {
@@ -105,7 +103,5 @@ var element = document.getElementById('button');
 element.addEventListener('click', button.click);
 ```
 
-
-
-
+This means that arrow functions used in object literals will have a context of the object itself, but of the current context in which the object is declared. 
 
