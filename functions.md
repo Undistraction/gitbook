@@ -7,7 +7,7 @@ A function has a `prototype` property. This property is not related to the proto
 A function has three additional _hidden_ properties:
 
 1. The context of the function: `this`
-2. The function's `prototype` object.
+2. `prototype` which stores its prototype object \(only relevant to constructor functions\).
 3. The code that implements its behaviour
 4. `prototype` which stores its prototype object \(only relevant to constructor functions\).
 
