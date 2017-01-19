@@ -11,7 +11,7 @@ In ES5 it will:
 It is enabled using:
 
 ```
-'use strict' 
+'use strict'
 ```
 
 
