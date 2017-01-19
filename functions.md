@@ -8,10 +8,9 @@ A function has three additional _hidden_ properties:
 
 1. The context of the function: `this`
 2. `prototype` which stores its prototype object \(only relevant to constructor functions\).
-3. The code that implements its behaviour
-4. `prototype` which stores its prototype object \(only relevant to constructor functions\).
+3. The code that implements its behaviour.
 
-A function can be invoked.
+## Types of Function
 
 There are important differences between a _function declaration_ and a _function expression. _
 
