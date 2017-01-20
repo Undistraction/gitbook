@@ -87,6 +87,8 @@ alpha() // Object
 
 ## 
 
+
+
 ## Closures
 
 When a function is created, it retains a link to the context in which it is created. This is _closure_.

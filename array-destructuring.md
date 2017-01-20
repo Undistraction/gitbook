@@ -1,17 +1,19 @@
-#Array Destructuring
+# Array Destructuring
 
 Assigning values from an array to variables.
 
 Before
-```
-let a = ['alpha', 'beta', 'charlie'];
 
-let alpha = a[0];
-let beta = a[1];
-let charlie = a[2];
+```
+var a = ['alpha', 'beta', 'charlie'];
+
+var alpha = a[0];
+var beta = a[1];
+var charlie = a[2];
 ```
 
 After
+
 ```
 let a = ['alpha', 'beta', 'charlie'];
 
@@ -41,3 +43,4 @@ let [alpha, ...rest] = a;
 ```
 
 The same is true when assigning the returned value from a function.
+

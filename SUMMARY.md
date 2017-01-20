@@ -21,6 +21,8 @@
 * [Object.create](objectcreate.md)
 * [API](api.md)
 * [Strict Mode](strict-mode.md)
+* [Important Notes](important-notes.md)
+* [Internals](inner-workings.md)
 
 ## ES6
 * [Array Destructuring](array-destructuring.md)
@@ -38,6 +40,7 @@
 * [Object Initialising and Destructuring](object-initialising-and-destructuring.md)
 * [Promises](promises.md)
 * [Sets](sets.md)
+* [Spread](spread.md)
 * [Template Strings](template-strings.md)
 * [Variadic Functions](variadic-functions.md)
 

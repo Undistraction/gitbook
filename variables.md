@@ -1,8 +1,6 @@
 # Variables
 
-Dashes are not allowed in variable names.
-
-
+Note: dashes are not allowed in variable names.
 
 
 
