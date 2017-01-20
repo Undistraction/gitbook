@@ -4,13 +4,13 @@ All functions have either a global execution context or function execution conte
 
 ## Lexical Environment
 
-An execution context provides _identifier resolution _\(the resolution of identifiers to variables\) and does this using the _lexical environment_. Each function and block has its own lexical environment \(at least in ES6, before which only functions and try/catch blocks did\). Each environment is able to look through its ancestors when trying to resolve an identifier. If it reaches the global lexical context and still doesn't find anything, this will generate an exception.
+An execution context provides _identifier resolution _\(the resolution of identifiers to variables\) and does this using the _lexical environment _of the function, or the global lexical environment. Each function and block has its own lexical environment \(at least in ES6, before which only functions and try/catch blocks did\). Each environment is able to look through its ancestors when trying to resolve an identifier. If it reaches the global lexical context and still doesn't find anything, this will generate an exception.
 
-This structure is based on function execution, not function location, so that a function's ultimate environment is based on how it was called, not where it was defined.
+This structure is based on function execution, not function location, so that a function's ultimate environment is based on how it was called, not where it was defined. This means that the ancestors of a lexical environment change depending on how it is called.
 
 ## Hoisting
 
-The process of moving variables 'to the top' of a function context is often referred to as hoisting. However the actual process of registering identifiers is more complex and differs between block and function/global scope. 
+The process of moving variables 'to the top' of a function context is often referred to as hoisting. However the actual process of registering identifiers is more complex and differs between block and function/global scope.
 
 ### Global Scope
 
