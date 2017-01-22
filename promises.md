@@ -39,11 +39,30 @@ Promises solve problems inherent with using callbacks. They remove the need to n
 A callback moves through several internal states, depending on the outcome of the situation.
 
 1. **Pending **This is its default state. 
-2. **Fulfilled **This is the state when the Promise has been fulfilled.
+2. **Fulfilled **This is the state when the Promise has been successfully fulfilled.
+3. **Rejected **This is the state when the Promise has errored.
 
-While a promise is pending it is known as an _unresolved_ promise. When it is fulfilled or rejected 
+While a promise is pending it is known as an _unresolved_ promise. When it is fulfilled or rejected it is _resolved._ A Promise cannot move from fulfilled to rejected or vice-versa.
+
+## Fulfilment
+
+If a promise is fulfilled, we can call resolve\(\) from within the promise, which will in turn call the supplied callback function.
+
+```
+resolve();
+```
+
+## **Rejection**
+
+If there is an error, we can call reject\(\) from within the promise, which will in turn call the supplied callback function.
+
+```
+reject();
+```
 
 
+
+As well as deliberately calling `reject`  inside a promise.
 
 
 
