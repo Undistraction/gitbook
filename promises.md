@@ -68,15 +68,53 @@ alphaPromise.then(() => // Success handling).catch(error => // Error Handling);
 
 ## Basic Promise
 
-Inside a promise we will usually be performing some kind of asynchronous operation which will either succeed \(in which case be call resolve and pass any necessary data or messages to it\) or fail \(in which case we call reject and pass an error message. In case the operation itself causes an exception we might want to wrap the operation itself in a` try`/`catch` block. Although an exception will cause `reject` to be called automatically, by catching any exception, we can control what information is passed to `reject`.
+Inside a promise we will usually be performing some kind of asynchronous operation which will either succeed \(in which case be call resolve and pass any necessary data or messages to it\) or fail \(in which case we call reject and pass an error message. In case the operation itself causes an exception we might want to wrap the operation itself in a`try`/`catch` block. Although an exception will cause `reject` to be called automatically, by catching any exception, we can control what information is passed to `reject`.
 
 ## Chaining Promises
 
+Because a call to then returns another promise, we can chain multiple promises together:
 
+```
+methodThatReturnsPromise(alpha)
+    .then(value => methodThatReturnsPromise(beta))
+    .then(value => methodThatReturnsPromise(charlie))
+```
 
+?????
 
+Error Handling can be done inline with a separate `catch` for each Promise:
 
+```
+methodThatReturnsPromise(alpha)
+    .then(value => methodThatReturnsPromise(beta))
+    .catch((error) => // Error handling)
+    .then(value => methodThatReturnsPromise(charlie))
+    .catch((error) => // Error handling)
+    .then(value => methodThatReturnsPromise(delta))
+    .catch((error) => // Error handling)
 
+```
+
+Or it can be done for all Promises with a single `catch`:
+
+```
+methodThatReturnsPromise(alpha)
+    .then(value => methodThatReturnsPromise(beta))
+    .then(value => methodThatReturnsPromise(charlie))
+    .then(value => methodThatReturnsPromise(delta))
+    .catch((error) => // Error handling)
+```
+
+## Parallel Promises
+
+Promises can be used in parallel instead of sequence.
+
+```
+Promise.all([methodThatReturnsAPromise(alpha),
+    methodThatReturnsAPromise(beta),
+    methodThatReturnsAPromise(charlie),
+    methodThatReturnsAPromise(delta)]);
+```
 
 
 
