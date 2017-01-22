@@ -20,7 +20,7 @@ const alphaPromise = new Promise((resolve, reject) => {
 })
 ```
 
-To execute a promise, the `then` method is called. Two callback functions are supplied, one for success and one for failure.
+To execute a promise, the `then` method is called. Two callback functions are supplied, one for success and one for failure. A new promise of the same type is returned.
 
 ```
 alphaPromise.then(value => {
@@ -54,15 +54,29 @@ resolve();
 
 ## **Rejection**
 
-If there is an error, we can call reject\(\) from within the promise, which will in turn call the supplied callback function.
+If there is an error, we can call `reject()` from within the promise, which will in turn call the supplied callback function. If an exception occurs and we don't call `reject` ourselves, it will be called automatically.
 
 ```
 reject();
 ```
 
+As well as deliberately calling `reject`  inside a promise, there is another way to handle errors. Instead of passing in a second callback, a `catch` method can be chained to the `then` method.
+
+```
+alphaPromise.then(() => // Success handling).catch(error => // Error Handling);
+```
+
+## Basic Promise
+
+Inside a promise we will usually be performing some kind of asynchronous operation which will either succeed \(in which case be call resolve and pass any necessary data or messages to it\) or fail \(in which case we call reject and pass an error message. In case the operation itself causes an exception we might want to wrap the operation itself in a` try`/`catch` block. Although an exception will cause `reject` to be called automatically, by catching any exception, we can control what information is passed to `reject`.
+
+## Chaining Promises
 
 
-As well as deliberately calling `reject`  inside a promise.
+
+
+
+
 
 
 
