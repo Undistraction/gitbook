@@ -38,8 +38,12 @@ Promises solve problems inherent with using callbacks. They remove the need to n
 
 A callback moves through several internal states, depending on the outcome of the situation.
 
-1. **Pending **This is its default state. While a promise is in this state it is known as an _unresolved p_romise.
-2. **Fulfilled **This is the 
+1. **Pending **This is its default state. 
+2. **Fulfilled **This is the state when the Promise has been fulfilled.
+
+While a promise is pending it is known as an _unresolved_ promise. When it is fulfilled or rejected 
+
+
 
 
 
