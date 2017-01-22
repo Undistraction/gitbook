@@ -1,53 +1,45 @@
 # ES 2016 - Promises
 
-Promises prevent async code from blocking.
+> A promise is a placeholder for a value that we don't have now but will have later; it's a guarantee that we'll eventually know the result of an asynchronous computation. It will make good on our promise; our result will be a value.
 
-Before
-```
-let results = getFromServer();
+_John Resig, Secrets of the JavaScript Ninja P147_
 
-// Subsequent code only run once getFromServer() returns a value
-if (results) {
-  handleSuccess();
-} else {
-  // Handle error
-}
+This value might take the form of an error - a reason for our broken promise.
+
+When a new Promise is constructed, an _executor function_ is passed to it. The executor function has two parameters: `resolve` and `reject`, and is called immediately, being passed in these two built-in functions as arguments. This gives the executor function two ways to deal with a situation depending on whether it is successful or not.
+
+To create a promise:
+
+```
+const alphaPromise = new Promise((resolve, reject) => {
+    if(Math.random() > 0.5) {
+        resolve('Success');
+    } else {
+        reject('Failure');
+    }
+})
 ```
 
-Continuation Passing Style (CPS) is better, but can result in nested callbacks.
+To execute a promise, the `then` method is called. Two callback functions are supplied, one for success and one for failure.
+
 ```
-getFromServer( function(results) {
-  // Code runs once getFromServer() returns a value
-  if (results) {
-    handleSuccess();
-  } else {
-    // Handle error
-  }
+alphaPromise.then(value => {
+    // Succeeded
+}, error => {
+    // Failed
 });
-// Subsequent code runs instantly
 ```
 
-After
-```
-// Construct Promise
-function getFromServer() {
-  return new Promise(function(resolve, reject) {
-    // Make request
-    // If successful
-    resolve(results);
-    // if unsuccessful
-    reject()
-  });
-}
+## Callback Hell
 
-// Envolk the promise
-getFromServer() {
-  .then(handleSuccess)
-  .catch(function(error) {
-    // Handle error
-  });
-}
-```
+Promises solve problems inherent with using callbacks. They remove the need to nest callbacks when dealing with a sequence of events and remove the need to check for completion of all parties when dealing with parallel events.
 
-An active promise moves through a pending state to either rejection or
-resolution.
+## State
+
+A callback moves through several internal states, depending on the outcome of the situation.
+
+1. **Pending **This is its default state. While a promise is in this state it is known as an _unresolved p_romise.
+2. **Fulfilled **This is the 
+
+
+
