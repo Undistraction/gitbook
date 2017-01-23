@@ -6,7 +6,13 @@ _John Resig, Secrets of the JavaScript Ninja P147_
 
 This value might take the form of an error - a reason for our broken promise.
 
-When a new Promise is constructed, an _executor function_ is passed to it. The executor function has two parameters: `resolve` and `reject`, and is called immediately, being passed in these two built-in functions as arguments. This gives the executor function two ways to deal with a situation depending on whether it is successful or not.
+## Callback Hell
+
+Promises solve problems inherent with using callbacks. They remove the need to nest callbacks when dealing with a sequence of events and remove the need to check for completion of all parties when dealing with parallel events.
+
+## Creation
+
+When a new Promise is constructed, an _executor function_ is passed to it. The executor function is responsible for doing whatever the Promise needs to do. The executor function has two parameters: `resolve` and `reject`, and is called immediately, being passed in these two built-in functions as arguments. This gives the executor function two ways to deal with a situation depending on whether it is successful or not. At this point, the Promise is ready to be used but will do nothing until it is told to. It stores the executor function and waits to be told to execute it. Although the executor function has access to the promise's resolve and reject methods, the promise doesn't have access to callbacks for these eventualities as these haven't been supplied yet.
 
 To create a promise:
 
@@ -20,6 +26,8 @@ const alphaPromise = new Promise((resolve, reject) => {
 })
 ```
 
+## Execution
+
 To execute a promise, the `then` method is called. Two callback functions are supplied, one for success and one for failure. A new promise of the same type is returned.
 
 ```
@@ -30,19 +38,63 @@ alphaPromise.then(value => {
 });
 ```
 
-## Callback Hell
+## Calling _then Multiple Times_
 
-Promises solve problems inherent with using callbacks. They remove the need to nest callbacks when dealing with a sequence of events and remove the need to check for completion of all parties when dealing with parallel events.
+If `then` is called on a promise multiple times before it is fulfilled, each callback is stored and all will be executed when it becomes fulfilled, in the order they were added.
+
+```
+var alphaMethod = function(value) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(++value), 4000);
+  });
+}
+
+var p1 = alphaMethod(1);
+
+p1.then((value) => console.log('A', value));
+p1.then((value) => console.log('B', value));
+p1.then((value) => console.log('C', value));
+
+// A2
+// B2
+// C2
+```
+
+Once a callback has been _fulfilled_, subsequent calls to `then` will result in the callback supplied to `then` being called immediately.
+
+```
+var alphaMethod = function(value) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(++value), 4000);
+  });
+}
+
+var p1 = alphaMethod(1);
+
+p1.then((value) => {
+  console.log('A', value);
+  afterResolved(value);
+});
+
+function afterResolved(value) {
+  p1.then((value) => console.log('B', value));
+  p1.then((value) => console.log('C', value));
+}
+
+// A2
+// B2
+// C2
+```
 
 ## State
 
-A callback moves through several internal states, depending on the outcome of the situation.
+A callback contains state and moves through two internal states, depending on the outcome of the situation.
 
 1. **Pending **This is its default state. 
 2. **Fulfilled **This is the state when the Promise has been successfully fulfilled.
 3. **Rejected **This is the state when the Promise has errored.
 
-While a promise is pending it is known as an _unresolved_ promise. When it is fulfilled or rejected it is _resolved._ A Promise cannot move from fulfilled to rejected or vice-versa.
+While a promise is pending it is known as an _unresolved_ promise. When it is fulfilled or rejected it is _resolved._ A Promise cannot move from fulfilled to rejected or vice-versa. 
 
 ## Fulfilment
 
@@ -70,7 +122,17 @@ alphaPromise.then(() => // Success handling).catch(error => // Error Handling);
 
 Inside a promise we will usually be performing some kind of asynchronous operation which will either succeed \(in which case be call resolve and pass any necessary data or messages to it\) or fail \(in which case we call reject and pass an error message. In case the operation itself causes an exception we might want to wrap the operation itself in a`try`/`catch` block. Although an exception will cause `reject` to be called automatically, by catching any exception, we can control what information is passed to `reject`.
 
+## Then
+
+If `then` is called on a promise which is not resolved, the promise waits for resolution before triggering the callback. 
+
 ## Chaining Promises
+
+To understand chaining, it is crucial to understand the `then` method.
+
+> If you return a value, the next `then()`is called with that value. However, if you return something promise-like, the next  `then()` waits on it, and is only called when that promise settles \(succeeds/fails\).
+
+_Google Developer Promises Docs_
 
 Because a call to then returns another promise, we can chain multiple promises together:
 
@@ -79,8 +141,6 @@ methodThatReturnsPromise(alpha)
     .then(value => methodThatReturnsPromise(beta))
     .then(value => methodThatReturnsPromise(charlie))
 ```
-
-?????
 
 Error Handling can be done inline with a separate `catch` for each Promise:
 
@@ -92,7 +152,6 @@ methodThatReturnsPromise(alpha)
     .catch((error) => // Error handling)
     .then(value => methodThatReturnsPromise(delta))
     .catch((error) => // Error handling)
-
 ```
 
 Or it can be done for all Promises with a single `catch`:
@@ -109,11 +168,26 @@ methodThatReturnsPromise(alpha)
 
 Promises can be used in parallel instead of sequence.
 
+### Wait for All
+
 ```
 Promise.all([methodThatReturnsAPromise(alpha),
     methodThatReturnsAPromise(beta),
     methodThatReturnsAPromise(charlie),
-    methodThatReturnsAPromise(delta)]);
+    methodThatReturnsAPromise(delta)])
+    .then(results => // Handle results)
+    .catch((error) => // Error handling)
+```
+
+### Wait for First
+
+```
+Promise.race([methodThatReturnsAPromise(alpha),
+    methodThatReturnsAPromise(beta),
+    methodThatReturnsAPromise(charlie),
+    methodThatReturnsAPromise(delta)])
+    .then(results => // Handle results)
+    .catch((error) => // Error handling)
 ```
 
 
