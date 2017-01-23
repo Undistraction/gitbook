@@ -1,5 +1,11 @@
 # ES 2016 - Promises
 
+Useful Resources;
+
+1. [http://www.mattgreer.org/articles/promises-in-wicked-detail/](http://www.mattgreer.org/articles/promises-in-wicked-detail)
+2. [http://exploringjs.com/es6/ch\_promises.html](http://exploringjs.com/es6/ch_promises.html)
+3. Codepen: [https://jsbin.com/kabamufoju/9/edit?html,js](https://jsbin.com/kabamufoju/9/edit?html,js)
+
 > A promise is a placeholder for a value that we don't have now but will have later; it's a guarantee that we'll eventually know the result of an asynchronous computation. It will make good on our promise; our result will be a value.
 
 _John Resig, Secrets of the JavaScript Ninja P147_
@@ -12,6 +18,8 @@ This value might take the form of an error - a reason for our broken promise.
 2. `then` always returns a new Promise.
 3. A promise has an internal `PromiseValue` property.
 4. A promise has an internal `PromiseStatus` property that tracks its state \(either `pending` or `resolved`\).
+5. The value passed in to a resolved handler is the outcome of the previous promise's execution function
+6. A function that returns a promise is a _promise-based-function_. Resolution callbacks are often promise-based-functions, returning a Promise.
 
 ## Callback Hell
 
@@ -52,6 +60,8 @@ alphaPromise.then(value => {
 ```
 
 If `then` is called on a promise which is not resolved, the promise waits for resolution before triggering the callback.
+
+The value that a promise resolves is passed into this handler, and the value returned from this handler is passed into the following promise's resolve.
 
 ## Calling _then Multiple Times_
 

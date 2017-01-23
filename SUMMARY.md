@@ -42,4 +42,5 @@
 * [Spread](spread.md)
 * [Template Strings](template-strings.md)
 * [Variadic Functions](variadic-functions.md)
+* [Combining Promises with Generators](combining-promises-with-generators.md)
 
