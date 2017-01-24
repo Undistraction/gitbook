@@ -3,6 +3,7 @@
 ## Importing and Exporting
 
 Before
+
 ```
 <!DOCTYPE html>
 <body>
@@ -14,7 +15,7 @@ Before
 
 ### Default Export
 
-Using `export default` allows a single export per module. When imported, the
+Using `export default` allows a single export per module. When imported, the  
 export is assigned a local name.
 
 ```
@@ -109,24 +110,23 @@ import {ALPHA, BETA} from 'constants.js';
 
 Default export
 
-```
-// clazz.js
-export default class Example {}
+    // clazz.js
+    export default class Example {}
 
-// app.js
-import Example from `./example.js`;
-new Example();
-```
+    // app.js
+    import Example from `./example.js`;
+    new Example();
 
 Named export
 
-```
-// clazz.js
-class Example {}
+    // clazz.js
+    class Example {}
 
-export { Example }
+    export { Example }
 
-// app.js
-import { Example } from `./example.js`;
-new Example();
-```
+    // app.js
+    import { Example } from `./example.js`;
+    new Example();
+
+
+
