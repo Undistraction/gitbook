@@ -25,6 +25,10 @@
 * [Internals](inner-workings.md)
 * [Type Checking](type-checking.md)
 * [Property Descriptors](property-descriptors.md)
+* [Getters And Setters](getters-and-setters.md)
+* [Proxies](proxies.md)
+* [Modules](modularisation.md)
+* [The DOM](dom.md)
 
 ## ES6
 * [Array Destructuring](array-destructuring.md)

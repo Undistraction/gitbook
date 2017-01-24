@@ -15,6 +15,21 @@ This means that any object can replace a Function's `prototype` attribute.
 
 By setting a constructor's prototype attribute to the instance of an object,  the attributes of that object become available to any object instances constructed from it.
 
+### Setting the Prototype of an Object Instance
+
+The prototype `__proto__` attribute of an object instance can be set using `Object.setPrototypeOf` method.
+
+```
+function Alpha() {}
+
+var alpha = new Alpha();
+Object.setPrototypeOf(alpha, {name: 'abc'})
+
+alpha.name // 'abc'
+```
+
+However this is costly and 
+
 ### Inheriting From Another Object
 
 Although it is possible to create inheritance just by setting the prototype of one constructor function to an object instance constructed by another, this alone will cause issues as the inheritance chain will be broken:
@@ -52,27 +67,24 @@ When using classes, this becomes much easier to achieve:
 
 ```
 class Alpha {
-  
-  constructor(beta) {
+
+  constructor(echo, beta) {
     this.beta = beta
   }
-  
+
   charlie() {}
 }
 
 class Delta extends Alpha {
-  
-  constructor(beta) {
+
+  constructor(echo, beta) {
     super(beta);
+    this.echo = echo;
   }
-  
-  charlie() {}
+
+  foxtrot() {}
 }
 ```
-
-## 
-
-## 
 
 ## Differential Inheritance
 
