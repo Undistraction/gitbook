@@ -11,9 +11,9 @@
 * [Reflection](reflection.md)
 * [Functions](functions.md)
 * [Exceptions](exceptions.md)
-* [Constructors](constructors.md)
 * [Apply](apply.md)
 * [Closure](closure.md)
+* [Constructor Functions](constructors.md)
 * [Scope](scope.md)
 * [Callbacks](callbacks.md)
 * [Creating Modules](modules.md)
@@ -23,6 +23,8 @@
 * [Strict Mode](strict-mode.md)
 * [Important Notes](important-notes.md)
 * [Internals](inner-workings.md)
+* [Type Checking](type-checking.md)
+* [Property Descriptors](property-descriptors.md)
 
 ## ES6
 * [Array Destructuring](array-destructuring.md)
@@ -42,5 +44,5 @@
 * [Spread](spread.md)
 * [Template Strings](template-strings.md)
 * [Variadic Functions](variadic-functions.md)
-* [Combining Promises with Generators](combining-promises-with-generators.md)
+* [Combining Promises with Iterators](combining-promises-with-generators.md)
 

@@ -15,6 +15,65 @@ This means that any object can replace a Function's `prototype` attribute.
 
 By setting a constructor's prototype attribute to the instance of an object,  the attributes of that object become available to any object instances constructed from it.
 
+### Inheriting From Another Object
+
+Although it is possible to create inheritance just by setting the prototype of one constructor function to an object instance constructed by another, this alone will cause issues as the inheritance chain will be broken:
+
+```
+function Alpha() {}
+
+Alpha.prototype.charlie = function() {}
+
+function Beta() {}
+
+Beta.prototype = new Alpha();
+
+var beta = new Beta();
+
+beta.charlie // function() {}
+beta.constructor // Alpha
+```
+
+There is no constructor function defined on `beta.__proto__`, so the `__proto__` of that object is consulted which does have a `constructor` property pointing to `Alpha`. To solve this issue, the constructor property of Beta's prototype object can be set to point to Beta. We use defineProperty as we don't want this property to be enumerable:
+
+```
+Object.defineProperty(Beta.prototype, 'constructor', {
+    enumerable: false,
+    value: Beta,
+    writable: true
+});
+
+beta.constructor // Beta
+```
+
+### Using Classes
+
+When using classes, this becomes much easier to achieve:
+
+```
+class Alpha {
+  
+  constructor(beta) {
+    this.beta = beta
+  }
+  
+  charlie() {}
+}
+
+class Delta extends Alpha {
+  
+  constructor(beta) {
+    super(beta);
+  }
+  
+  charlie() {}
+}
+```
+
+## 
+
+## 
+
 ## Differential Inheritance
 
 Customisation of a new object by specifying the differences from the object on which it is based.
@@ -36,7 +95,7 @@ createdInstance.__proto__ === alphaInstance //true
 
 ## Using Functions For Privacy
 
-Through the use of functions / closure, an object can be constructed with completely private attributes:
+Through the use of closures, an object can be constructed with completely private attributes:
 
 ```
 var alphaConstructor = function() {
@@ -106,5 +165,5 @@ console.log(charlieObject.getDelta()) // 'ghi'
 
 ## Mixins
 
-It is also easy to add methods to an object using a function. This can be used on prototype objects to bestow functionality on all objects with that object exists in their prototype chain. This allows an object to receive methods from multiple functions, mixing functionality into the object. 
+It is also easy to add methods to an object using a function. This can be used on prototype objects to bestow functionality on all objects with that object exists in their prototype chain. This allows an object to receive methods from multiple functions, mixing functionality into the object.
 

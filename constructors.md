@@ -1,4 +1,4 @@
-# Constructors
+# Constructor Functions
 
 When a function is invoked using the `new` keyword, it becomes a _constructor function_ and behaves differently, returning a new Object.
 
@@ -35,4 +35,6 @@ new Alpha().charlie(); // abc
 ```
 
 A constructor function should never be called without the `new` keyword.
+
+Although it might appear more compact to add methods to the prototype within the constructor function itself, this would be inefficient, as each call to the constructor would recreate the same method and re-add it to the prototype. By adding the method to the prototype outside of the constructor, it is added one time only.
 
