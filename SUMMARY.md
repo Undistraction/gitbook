@@ -1,6 +1,7 @@
 # Summary
 
 ## ES
+
 * [Introduction](README.md)
 * [NaN](nan.md)
 * [Strings](strings.md)
@@ -29,8 +30,10 @@
 * [Proxies](proxies.md)
 * [Modules](modularisation.md)
 * [The DOM](dom.md)
+* [Pure Functions](pure-functions.md)
 
 ## ES6
+
 * [Array Destructuring](array-destructuring.md)
 * [Arrays](arrays.md)
 * [Bind](bind.md)
