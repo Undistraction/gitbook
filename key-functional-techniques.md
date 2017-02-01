@@ -14,7 +14,7 @@ b // [2, 4, 6]
 
 ## Filter
 
-Array.prototype.filter allows you to iterate over an array and decide which items should be included in a new array. 
+Array.prototype.filter allows you to iterate over an array and decide which items should be included in a new array.
 
 ```
 const a = [1, 2, 3, 5];
@@ -44,8 +44,19 @@ Array.prototpe.some allows you to check each item in an array, with the function
 ```
 const a = [1, 2, 3, 4, 5, 6];
 
-// value is divisible by three but not three
-a.some((x) => x / 3 !== 1 && x % 3 == 0
+// Divisible by three and not three itself
+const b = a.some((x) => x / 3 !== 1 && x % 3 == 0);
+
+b // true
+
+const c = [1, 2, 3, 4, 5];
+
+// Divisible by three and not three itself
+const d = c.some((x) => x / 3 !== 1 && x % 3 == 0);
+
+d // false
+
+
 ```
 
 
