@@ -31,6 +31,7 @@
 * [Modules](modularisation.md)
 * [The DOM](dom.md)
 * [Pure Functions](pure-functions.md)
+* [Key Functional Techniques](key-functional-techniques.md)
 
 ## ES6
 
