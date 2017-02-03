@@ -37,6 +37,17 @@ const b = a.reduce((x, y) => x + y);
 b; // ABC
 ```
 
+If using object properties for comparison, the object itself can be accumulated rather than the value of the property, allowing the array to be reduced to an object rather than a derived value:
+
+```
+const a = [{value: 6}, {value: 2}, {value: 4}];
+const b = a.reduce((x, y) => y.value > x.value ? y : x );
+
+b; // {value: 6}
+```
+
+
+
 ## Some
 
 Array.prototpe.some allows you to check each item in an array, with the function returning true as soon as an item is found that matches your criterior or false if none do.
@@ -55,8 +66,6 @@ const c = [1, 2, 3, 4, 5];
 const d = c.some((x) => x / 3 !== 1 && x % 3 == 0);
 
 d // false
-
-
 ```
 
 
