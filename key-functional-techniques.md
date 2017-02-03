@@ -46,7 +46,24 @@ const b = a.reduce((x, y) => y.value > x.value ? y : x );
 b; // {value: 6}
 ```
 
+Reduce can also be used to accumulate values onto an initial object. In this way an array of values can be build into a single object:
 
+```
+var a = [
+  {value: 100, id:'a'},
+  {value: 200, id:'b'},
+  {value: 300, id:'c'}
+]
+
+var b = a.reduce(function(ac, cu) {
+  ac[cu.id] = cu.value;
+  return ac;
+}, {});
+
+b // {a:100, b:200, c:300}
+```
+
+## 
 
 ## Some
 
