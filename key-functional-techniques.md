@@ -63,8 +63,6 @@ var b = a.reduce(function(ac, cu) {
 b // {a:100, b:200, c:300}
 ```
 
-## 
-
 ## Some
 
 Array.prototpe.some allows you to check each item in an array, with the function returning true as soon as an item is found that matches your criterior or false if none do.
