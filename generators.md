@@ -30,7 +30,7 @@ function* AlphaGenerator() {
 const alphaIterator = AlphaGenerator();
 ```
 
-Every call to the iterator's next\(\) method will return an object with two properties: `value` and `done`. If there is a value to return the object will contain the value in the `value` property and `done` will be set to `false`.  
+Every call to the iterator's next\(\) method will return an object with two properties: `value` and `done`. If there is a value to return the object will contain the value in the `value` property and `done` will be set to `false`.
 
 ```
 {
@@ -104,7 +104,7 @@ function* AlphaGenerator(value) {
     yield 2 + value;
     yield 3 + value;
 }
-  
+
 for(let value of AlphaGenerator('A')) {
     value // A1, A2, A3
 }

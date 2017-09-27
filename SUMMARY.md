@@ -56,4 +56,5 @@
 ## Functional Programming
 
 * [Collections](key-functional-techniques.md)
+* [Higher Order Functions](higher-order-functions.md)
 
