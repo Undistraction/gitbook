@@ -14,5 +14,5 @@ It is enabled using:
 'use strict'
 ```
 
-
+If you are using a transpiler like Babel, it will transpile your ES6 code down to ES5 and add this declaration automatically.
 

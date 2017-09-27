@@ -22,7 +22,7 @@
 * [Object.create](objectcreate.md)
 * [API](api.md)
 * [Strict Mode](strict-mode.md)
-* [Important Notes](important-notes.md)
+* [Closure](important-notes.md)
 * [Internals](inner-workings.md)
 * [Type Checking](type-checking.md)
 * [Property Descriptors](property-descriptors.md)
@@ -31,7 +31,6 @@
 * [Modules](modularisation.md)
 * [The DOM](dom.md)
 * [Pure Functions](pure-functions.md)
-* [Key Functional Techniques](key-functional-techniques.md)
 
 ## ES6
 
@@ -53,4 +52,8 @@
 * [Template Strings](template-strings.md)
 * [Variadic Functions](variadic-functions.md)
 * [Combining Promises with Iterators](combining-promises-with-generators.md)
+
+## Functional Programming
+
+* [Collections](key-functional-techniques.md)
 
