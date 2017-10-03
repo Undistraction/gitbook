@@ -1,4 +1,4 @@
-# Function Argumnets
+# Function Arguments
 
 The number of arguments of a function dictate its **artity**. There are names for different types of **artity**:
 
