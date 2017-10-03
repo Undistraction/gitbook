@@ -30,7 +30,6 @@
 * [Proxies](proxies.md)
 * [Modules](modularisation.md)
 * [The DOM](dom.md)
-* [Pure Functions](pure-functions.md)
 
 ## ES6
 
@@ -56,6 +55,9 @@
 ## Functional Programming
 
 * [Collections](key-functional-techniques.md)
+* [Pure Functions](pure-functions.md)
+* [Partial Application](partial-application.md)
 * [Higher Order Functions](higher-order-functions.md)
+* [Map](map.md)
 * [Function Arguments](function-arguments.md)
 
