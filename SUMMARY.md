@@ -57,4 +57,5 @@
 
 * [Collections](key-functional-techniques.md)
 * [Higher Order Functions](higher-order-functions.md)
+* [Function Arguments](function-arguments.md)
 
