@@ -8,7 +8,7 @@ JavaScript _hoists_ variables to the top of the current function \(or the docume
 
 ## this
 
-Note: when using _strict mode_ or in ES6 this is set to undefined when a function isn't called on on object:
+When using _strict mode_ or in ES6 this is set to undefined when a function isn't called on on object:
 
 ```
 function alpha() {
@@ -19,7 +19,7 @@ var beta = {
   alpha: alpha
 };
 
-console.log(alpha()); // undefined
+alpha(); // undefined
 console.log(beta.alpha()); // Object
 ```
 
